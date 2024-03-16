@@ -1,0 +1,7 @@
+TUP-M-0001,ginoong halimaw,1987-7-8,engineering,8009 hallo st san antonio las pinas,ry@yahoo.com
+TUP-M-0002,mamang tubero,1879-7-8,medicine,1276 nANAY MO ST ,YU@GMAIL.COM
+TUP-M-0005,ryan,1987-8-8,lipad,hsdsdsdsd,ry@gmail
+TUP-M-0006,rya,1889-9-7,bano,hou hsds,ryry@g.vom
+TUP-M-0007,ry,2002-09-8,haiku,yudsd,sd@gmgi
+TUP-M-0009,gab,1898-09-8,bsis,manila,gab@yahoo.com
+TUP-M-0010,pat casanada,2001-09-17,bsit,north daang hari,casanada@gmail,com
