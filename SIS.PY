@@ -27,7 +27,26 @@ class SubstitutionCipher:
             else:
                 decrypted_text += char
         return decrypted_text
-    
+
+class Student:
+    id_counter = 0
+
+    def __init__(self, name, birthday, course, address, email):
+        Student.id_counter += 1
+        self.id = f"TUP-M-{Student.id_counter:04d}"
+        self.name = name
+        self.birthday = birthday
+        self.age = self.calculate_age(birthday)
+        self.course = course
+        self.address = address
+        self.email = email
+
+    def calculate_age(self, birthday):
+        today = datetime.date.today()
+        birth_date = datetime.datetime.strptime(birthday, "%Y-%m-%d").date()
+        age = today.year - birth_date.year - ((today.month, today.day) < (birth_date.month, birth_date.day))
+        return age
+
 class StudentSystem:
     def __init__(self):
         self.students = []
@@ -60,25 +79,6 @@ class StudentSystem:
         del self.students[index]
         self.save_data()
 
-class Student:
-    id_counter = 0
-
-    def __init__(self, name, birthday, course, address, email):
-        Student.id_counter += 1
-        self.id = f"TUP-M-{Student.id_counter:04d}"
-        self.name = name
-        self.birthday = birthday
-        self.age = self.calculate_age(birthday)
-        self.course = course
-        self.address = address
-        self.email = email
-
-    def calculate_age(self, birthday):
-        today = datetime.date.today()
-        birth_date = datetime.datetime.strptime(birthday, "%Y-%m-%d").date()
-        age = today.year - birth_date.year - ((today.month, today.day) < (birth_date.month, birth_date.day))
-        return age
-
 class GUI(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -93,8 +93,8 @@ class GUI(tk.Tk):
         self.encrypt_button = tk.Button(self, text="Encrypt a Record", command=self.encrypt_menu, bg="black", fg="white")  # Changing button background to black and text color to white
         self.encrypt_button.pack(pady=5)
 
-        self.decrypt_button = tk.Button(self, text="Decrypt a Record", command=self.decrypt_menu, bg="black", fg="white")  # Changing button background to black and text color to white
-        self.decrypt_button.pack(pady=5)
+        #self.decrypt_button = tk.Button(self, text="Decrypt a Record", command=self.decrypt_menu, bg="black", fg="white")  # Changing button background to black and text color to white
+        #self.decrypt_button.pack(pady=5)
 
         self.made_by_label = tk.Label(self, text="Made by Ryan", bg="black", fg="white")  # Changing label background to black and text color to white
         self.made_by_label.pack(pady=5)
