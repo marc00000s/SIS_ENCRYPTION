@@ -6,7 +6,7 @@ import hashlib
 import string
 
 class SubstitutionCipher:
-    @staticmethod
+    @staticmethod 
     def encrypt(text, key):
         alphabet = string.ascii_lowercase
         encrypted_text = ""
